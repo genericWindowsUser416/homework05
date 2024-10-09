@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //это тест чтобы проверить сделан ли push 123
+            //это тест чтобы проверить сделан ли push 123 git eto kruto
         }
     }
 }
