@@ -12,10 +12,10 @@ namespace homework05Test
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase("5", 500)]
+        [TestCase("200", "100", 10)]
         public void getBonusAmountTest(string userInputTotalSells, string userInputPlannedSells, double expected)
         {
-            double actual = homework01.getDeliveryCost(userInput);
+            double actual = homework01.getBonusAmount(userInputTotalSells, userInputPlannedSells);
             Assert.AreEqual(expected, actual);
         }
     }
