@@ -1,0 +1,22 @@
+using homework05;
+
+namespace homework05Test
+{
+    public class homework01Tests
+    {
+
+        [TestCase("5", 500)]
+        public void getDeliveryCostTest(string userInput, double expected)
+        {
+            double actual = homework01.getDeliveryCost(userInput);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase("5", 500)]
+        public void getBonusAmountTest(string userInputTotalSells, string userInputPlannedSells, double expected)
+        {
+            double actual = homework01.getDeliveryCost(userInput);
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
