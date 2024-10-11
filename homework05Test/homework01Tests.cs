@@ -18,5 +18,12 @@ namespace homework05Test
             double actual = homework01.getBonusAmount(userInputTotalSells, userInputPlannedSells);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase("100", 115)]
+        public void getInvestmentEarnAmountTest(string userInputDepositAmount, double expected)
+        {
+            double actual = homework01.getInvestmentEarnAmount(userInputDepositAmount);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
