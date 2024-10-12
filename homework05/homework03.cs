@@ -20,12 +20,13 @@
         {
             // Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
             double inputtedNumber = Convert.ToDouble(userInputNumber);
-
+            string result = "";
             for (double i = inputtedNumber; i <= 1000 && i > 0; i = i + inputtedNumber)
             {
-                Console.WriteLine(i);
+                result += $"{i}, ";
             }
-            return "^ Числа от 1 до 1000, которые делятся на введённое вами число ^";
+            result = result.Remove(result.Length - 2);
+            return result;
         }
 
         public static double getAmountOfPositiveNumbers(string userInputNumber)
@@ -64,7 +65,7 @@
 
             double biggestNumber;
             double smallerNumber;
-            
+
             if (firstInputtedNumber - secondInputtedNumber > 0)
             {
                 biggestNumber = firstInputtedNumber;
