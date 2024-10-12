@@ -35,5 +35,13 @@ namespace homework05Test
             double actual = homework03.getBiggestDivider(userInputNumber);
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [TestCase("7", "14", 21)]
+        [TestCase("21", "14", 35)]
+        public void getSummaryFromRangeDividedEntirelyBySevenTest(string userInputNumberOne, string userInputNumberTwo, double expected)
+        {
+            double actual = homework03.getSummaryFromRangeDividedEntirelyBySeven(userInputNumberOne, userInputNumberTwo);
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
