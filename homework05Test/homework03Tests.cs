@@ -27,5 +27,13 @@ namespace homework05Test
             double actual = homework03.getAmountOfPositiveNumbers(userInputNumber);
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [TestCase("18", 9)]
+        [TestCase("22", 11)]
+        public void getBiggestDivider(string userInputNumber, double expected)
+        {
+            double actual = homework03.getBiggestDivider(userInputNumber);
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
