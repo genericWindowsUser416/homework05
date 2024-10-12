@@ -39,21 +39,21 @@
             if (guestAmount > mediumTableCapacity && guestAmount <= largeTableCapacity) result = "Предлагаем большой столик на 8 человек";
             return result;
         }
-        public static string getClientGetsDiscount(string userInputYourName, string userInputYourAge, string userInputOrderAmount, string userInputMoneySpent)
+        public static bool getClientGetsDiscount(string userInputYourName, string userInputYourAge, string userInputOrderAmount, string userInputMoneySpent)
         {
             // Магазин хранит о клиентах следующую информацию: - Имя; - Возраст; - Количество заказов; - Суммы потраченных средств. Магазин предлагает постоянным клиентам и клиентам старше 60 лет скидку. Клиент считается постоянным, если он произвел 4 или более заказов общей суммой от 5000 Напишите программу, которая будет получать на вход данные о клиенте и возвращать на консоль информацию о том получает ли клиент скидку или нет.
             string yourName = userInputYourName;
             double yourAge = Convert.ToDouble(userInputYourAge);
             double orderAmount = Convert.ToDouble(userInputOrderAmount);
             double moneySpent = Convert.ToDouble(userInputMoneySpent);
-            string result = $"{yourName}, Вы не получаете скидку";
+            bool result = false;
 
-            if (yourAge > 60) result = $"{yourName}, Вы получаете скидку";
-            if (orderAmount >= 4 && moneySpent >= 5000) result = $"{yourName}, Вы получаете скидку";
+            if (yourAge > 60) result = true;
+            if (orderAmount >= 4 && moneySpent >= 5000) result = true;
 
             return result;
         }
-        public static string getDeliverySizeIsSmall(string userInputItemLength, string userInputItemWidth, string userInputItemHeight, string userInputItemMass, string userInputDeliveryDistance)
+        public static bool getDeliverySizeIsSmall(string userInputItemLength, string userInputItemWidth, string userInputItemHeight, string userInputItemMass, string userInputDeliveryDistance)
         {
             // Курьерская служба принимает в работу в качестве малогабаритного отправления только заказы соответствующие следующим условиям: - Сумма длины, ширины и высоты отправления не превышает 150см; - Ни одно из измерений не превышает 100см; - Масса отправления не превышает 10кг; - Расстояние доставки находится в диапазоне от 3 до 10км. Напишите программу, которая будет получать от пользователя данные об отправлении и сообщать, является ли оно малогабаритным.
             double maximumLength = 100;
@@ -70,14 +70,14 @@
             double itemMass = Convert.ToDouble(userInputItemMass);
             double deliveryDistance = Convert.ToDouble(userInputDeliveryDistance);
 
-            string result = "Отправление не является малогабаритным";
+            bool result = false;
             if (itemLength + itemWidth + itemHeight <= maximumDimensionSummary && itemMass <= maximumMass)
             {
                 if (itemLength <= maximumLength && itemWidth <= maximumWidth && itemHeight <= maximumHeight)
                 {
                     if (deliveryDistanceMin <= deliveryDistance && deliveryDistance <= deliveryDistanceMax)
                     {
-                        result = "Отправление является малогабаритным";
+                        result = true;
                     }
                 }
             }
