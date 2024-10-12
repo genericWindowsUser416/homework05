@@ -37,13 +37,13 @@
         public static double getMirroredNumber(string userInputNumberOne)
         {
             // Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321
-            long inputtedNumber = Convert.ToInt64(userInputNumberOne);
+            int inputtedNumber = Convert.ToInt32(userInputNumberOne);
             long result = 0;
             while (inputtedNumber > 0)
             {
                 int current = inputtedNumber % 10;
                 inputtedNumber = inputtedNumber / 10;
-                result = result * 10 + current
+                result = result * 10 + current;
             }
             return result;
         }
