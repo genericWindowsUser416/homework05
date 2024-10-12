@@ -19,5 +19,14 @@ namespace homework05Test
             double actual = homework04.getUnevenNumbersAmount(userInputNumberOne);
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [TestCase("123", 321)]
+        [TestCase("4200", 0024)]
+        [TestCase("20010670", 07601002)]
+        public void getMirroredNumberTest(string userInputNumberOne, double expected)
+        {
+            double actual = homework04.getMirroredNumber(userInputNumberOne);
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
