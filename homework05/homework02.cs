@@ -2,7 +2,7 @@
 {
     public static class homework02
     {
-        public static string getItemCostWithDiscount(string userInputItemName, string userInputCostPerOne, string userInputItemAmount, string userInputItemIsInPromotion)
+        public static double getItemCostWithDiscount(string userInputItemName, string userInputCostPerOne, string userInputItemAmount, string userInputItemIsInPromotion)
         {
             // Позиция товара в чеке интернет магазина описывается следующими значениями: -Название; -Цена за единицу; -Количество; -Участвует в акции(да/ нет). Напишите программу, которая получает перечисленные значения и вычисляет сумму по следующему правилу: Если количество товара в чеке больше либо равно 5, то к товару применяется скидка в 10 %.Если товар учавствует в акции -применяется скидка в 15 %. Скидки могут суммироваться.
             string itemName = userInputItemName;
@@ -22,7 +22,7 @@
 
             double finalCost = (itemAmount * costPerOne) - (itemAmount * costPerOne * totalDiscount);
             result = $"Итоговая стоимость {itemName}: {finalCost}";
-            return result;
+            return finalCost;
         }
         public static string getOptimalTableSize(string userInputGuestAmount)
         {
