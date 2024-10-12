@@ -19,5 +19,13 @@ namespace homework05Test
             string actual = homework03.getNumbersFrom1To1000(userInputNumber);
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [TestCase("500", 22)]
+        [TestCase("16", 3)]
+        public void getAmountOfPositiveNumbersTest(string userInputNumber, double expected)
+        {
+            double actual = homework03.getAmountOfPositiveNumbers(userInputNumber);
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
