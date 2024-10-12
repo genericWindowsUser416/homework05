@@ -30,7 +30,7 @@ namespace homework05Test
 
         [TestCase("18", 9)]
         [TestCase("22", 11)]
-        public void getBiggestDivider(string userInputNumber, double expected)
+        public void getBiggestDividerTest(string userInputNumber, double expected)
         {
             double actual = homework03.getBiggestDivider(userInputNumber);
             Assert.That(actual, Is.EqualTo(expected));
