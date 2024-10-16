@@ -1,55 +1,53 @@
-﻿namespace homework05
+﻿using System.Text;
+
+namespace homework05
 {
     public static class homework03
     {
-        public static double getAinpowerB(string userInputNumberOne, string userInputNumberTwo)
+        public static double getAinpowerB(double userInputNumberOne, double userInputNumberTwo)
         {
             // Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
-            double numberOne = Convert.ToDouble(userInputNumberOne);
-            double numberTwo = Convert.ToDouble(userInputNumberTwo);
 
             double result = 1;
-            for (int i = 0; i < numberTwo; i++)
+            for (int i = 0; i < userInputNumberTwo; i++)
             {
-                result = result * numberOne;
+                result = result * userInputNumberOne;
             }
             return result;
         }
 
-        public static string getNumbersFrom1To1000(string userInputNumber)
+        public static string getNumbersFrom1To1000(double userInputNumber)
         {
             // Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
-            double inputtedNumber = Convert.ToDouble(userInputNumber);
-            string result = "";
-            for (double i = inputtedNumber; i <= 1000 && i > 0; i = i + inputtedNumber)
+            StringBuilder sb = new StringBuilder();
+            for (double i = userInputNumber; i <= 1000 && i > 0; i = i + userInputNumber)
             {
-                result += $"{i}, ";
+                sb.Append($"{i}, ");
             }
-            result = result.Remove(result.Length - 2);
+            sb = sb.Remove(sb.Length - 2, 2);
+            string result = sb.ToString();
             return result;
         }
 
-        public static double getAmountOfPositiveNumbers(string userInputNumber)
+        public static double getAmountOfPositiveNumbers(double userInputNumber)
         {
             // Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
-            double inputtedNumber = Convert.ToDouble(userInputNumber);
-
             int amountOfCorrrectNumbers = 0;
-            for (int i = 1; i * i < inputtedNumber; i++)
+            for (int i = 1; i * i < userInputNumber; i++)
             {
                 amountOfCorrrectNumbers = amountOfCorrrectNumbers + 1;
             }
             double result = amountOfCorrrectNumbers;
             return result;
         }
-        public static double getBiggestDivider(string userInputNumber)
+
+        public static double getBiggestDivider(double userInputNumber)
         {
             // Пользователь вводит 1 число (A). Вывести наибольший делитель (кроме самого A) числа A.
-            double inputtedNumber = Convert.ToDouble(userInputNumber);
             double result = 0;
-            for (double i = inputtedNumber; i > 0; i = i - 1)
+            for (double i = userInputNumber; i > 0; i = i - 1)
             {
-                if (inputtedNumber % i == 0 && inputtedNumber != i)
+                if (userInputNumber % i == 0 && userInputNumber != i)
                 {
                     result = i;
                     break;
@@ -57,24 +55,22 @@
             }
             return result;
         }
-        public static double getSummaryFromRangeDividedEntirelyBySeven(string userInputNumberOne, string userInputNumberTwo)
+
+        public static double getSummaryFromRangeDividedEntirelyBySeven(double userInputNumberOne, double userInputNumberTwo)
         {
             // Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся без остатка на 7 (Учтите, что при вводе B может оказаться меньше A).
-            double firstInputtedNumber = Convert.ToDouble(userInputNumberOne);
-            double secondInputtedNumber = Convert.ToDouble(userInputNumberTwo);
-
             double biggestNumber;
             double smallerNumber;
 
-            if (firstInputtedNumber - secondInputtedNumber > 0)
+            if (userInputNumberOne - userInputNumberTwo > 0)
             {
-                biggestNumber = firstInputtedNumber;
-                smallerNumber = secondInputtedNumber;
+                biggestNumber = userInputNumberOne;
+                smallerNumber = userInputNumberTwo;
             }
             else
             {
-                biggestNumber = secondInputtedNumber;
-                smallerNumber = firstInputtedNumber;
+                biggestNumber = userInputNumberTwo;
+                smallerNumber = userInputNumberOne;
             }
 
             double summaryOfFittingNumbers = 0;
