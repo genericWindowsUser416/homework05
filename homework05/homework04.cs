@@ -2,7 +2,7 @@
 {
     public static class homework04
     {
-        public static double getBiggestDividerWithEuclid(string userInputNumberOne, string userInputNumberTwo)
+        public static double getBiggestDividerWithEuclid(double userInputNumberOne, double userInputNumberTwo)
         {
             // Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
             double firstNumber = Convert.ToDouble(userInputNumberOne);
@@ -19,30 +19,29 @@
             double result = tmp_firstNumber + tmp_secondNumber;
             return result;
         }
-        public static double getUnevenNumbersAmount(string userInputNumberOne)
+
+        public static double getUnevenNumbersAmount(int userInputNumberOne)
         {
             // Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
-            long inputtedNumber = Convert.ToInt64(userInputNumberOne);
-
             int oddNumbersAmount = 0;
             int result;
-            while (inputtedNumber > 0)
+            while (userInputNumberOne > 0)
             {
-                if (inputtedNumber % 2 != 0) oddNumbersAmount++;
-                inputtedNumber = inputtedNumber / 10;
+                if (userInputNumberOne % 2 != 0) oddNumbersAmount++;
+                userInputNumberOne = userInputNumberOne / 10;
             }
             result = oddNumbersAmount;
             return result;
         }
-        public static double getMirroredNumber(string userInputNumberOne)
+
+        public static double getMirroredNumber(int userInputNumberOne)
         {
             // Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321
-            int inputtedNumber = Convert.ToInt32(userInputNumberOne);
             long result = 0;
-            while (inputtedNumber > 0)
+            while (userInputNumberOne > 0)
             {
-                int current = inputtedNumber % 10;
-                inputtedNumber = inputtedNumber / 10;
+                int current = userInputNumberOne % 10;
+                userInputNumberOne = userInputNumberOne / 10;
                 result = result * 10 + current;
             }
             return result;
